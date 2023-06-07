@@ -1,0 +1,210 @@
+@import "../color.scss";
+::-webkit-scrollbar {
+  display: none;
+}
+
+.mainContainer {
+  background-color: $bgAliceBlue;
+
+  .categoryInfoWrapper {
+    display: flex;
+    background: $white;
+    justify-content: space-between;
+    margin: 20px 25px;
+    padding: 0 25px;
+    align-items: center;
+    .categoryInfo {
+      display: flex;
+      padding: 20px;
+      align-items: center;
+      .catDetails {
+        margin: 0 0 0 20px;
+        .catTitle {
+          font-size: 34px;
+          margin: 0;
+        }
+        .catDesc {
+          color: $txtGrey;
+        }
+      }
+    }
+    .breadCrumbs {
+      ul {
+        display: flex;
+        li {
+          list-style-type: none;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          a {
+            text-decoration: none;
+            color: $black;
+          }
+          &:not(:last-child)::after {
+            content: "";
+            display: block;
+            border-left: 2px solid $black;
+            border-top: 2px solid $black;
+            width: 6px;
+            height: 6px;
+            float: right;
+            margin-right: 15px;
+            transform: translate(50%, -50%) rotate(135deg);
+          }
+        }
+      }
+    }
+  }
+
+  .productContainer {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 65vh;
+    padding-bottom: 100px;
+
+    .productCard {
+      background-color: $offWhite;
+      height: 200px;
+      margin: 20px;
+      padding: 30px 10px 20px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s;
+      &:hover {
+        -webkit-transform: scale(1.08);
+        transform: scale(1.08);
+        cursor: pointer;
+      }
+      .imgWrapper {
+        height: 100px;
+
+        img {
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+
+      .productName {
+        margin-bottom: 5px;
+        text-align: center;
+      }
+
+      .productPrice {
+        margin-top: 5px;
+        color: $activeRed;
+      }
+    }
+  }
+  &.dark {
+    background-color: $bgCardDark;
+    .categoryInfoWrapper {
+      background-color: $black;
+      .categoryInfo {
+        .catIcon {
+          color: $white;
+        }
+        .catTitle {
+          color: $white;
+        }
+      }
+      .breadCrumbs {
+        color: $white;
+        li {
+          a {
+            color: $white;
+          }
+          &:not(:last-child)::after {
+            border-left: 2px solid $white;
+            border-top: 2px solid $white;
+          }
+        }
+      }
+    }
+    .productContainer {
+      .productCard {
+        background-color: $black;
+        .productName {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1560px) {
+  .mainContainer {
+    .productContainer {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .mainContainer {
+    .productContainer {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .mainContainer {
+    .productContainer {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainContainer {
+    .categoryInfoWrapper {
+      flex-direction: column;
+      .categoryInfo {
+        .catDetails {
+          .catTitle {
+            font-size: 18px;
+          }
+          .catDesc {
+            font-size: 12px;
+          }
+        }
+      }
+      .breadCrumbs {
+        ul {
+          li {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            a {
+              font-size: 12px;
+            }
+            span {
+              font-size: 12px;
+            }
+            &:not(:last-child)::after {
+              content: "";
+              display: block;
+              border-left: 1px solid $black;
+              border-top: 1px solid $black;
+              width: 4px;
+              height: 4px;
+              float: right;
+              margin-right: 10px;
+              transform: translate(50%, -50%) rotate(135deg);
+            }
+          }
+        }
+      }
+    }
+    .productContainer {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}

@@ -1,0 +1,133 @@
+@import "../color.scss";
+.navHeaderContainer {
+    padding: 20px;
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+
+    .searchBar {
+        background-color: $bgAliceBlue;
+        height: 40px;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+
+        .txtSearch {
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        .iconCommandWrapper {
+            height: 30px;
+            width: 40px;
+            background-color: $white;
+            color: $txtGrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+    }
+
+    .otherFeatures {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .chatAndMore {
+            display: flex;
+            margin-right: 20px;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+
+            .iconWrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+                color: $txtGrey;
+
+                .lblFeature {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .btnWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .btn {
+                padding: 10px 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+                border-radius: 8px;
+                border: 1px solid $greyBorder;
+
+                &.transparent {
+                    background-color: transparent;
+                }
+
+                &.primary {
+                    background-color: $bgRed;
+                    color: $activeRed;
+                }
+
+                .lblFeature {
+                    margin-left: 5px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    &.dark{
+        background-color: $black;
+        .searchBar{
+            background-color: $bgCardDark;
+        }
+        .otherFeatures{
+            .btnWrapper{
+                .btn{
+                    color: $txtGrey;
+                    &.primary {
+                        background-color: $bgRed;
+                        color: $activeRed;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navHeaderContainer {
+        padding-right: 10px;
+        .otherFeatures {
+            .chatAndMore {
+                margin-right: 5px;
+                margin-left: 5px;
+                .iconWrapper {
+                    .lblFeature {
+                        display: none;
+                    }
+                }
+            }
+            .btnWrapper {
+                .btn {
+                    padding: 8px 10px;
+
+                    .lblFeature {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

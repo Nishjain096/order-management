@@ -1,0 +1,189 @@
+@import "../color.scss";
+.navbar {
+  border-right: 1px solid $greyBorder;
+  height: 100vh;
+  width: 250px;
+  position: relative;
+  transition: all 0.5s;
+  background-color: $white;
+  .menuContainer {
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    .headerContainer {
+      margin-left: 12px;
+      width: 100%;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $txtGrey;
+        .filterWrapper {
+          display: flex;
+          align-items: center;
+          .filterIcon {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    .cat-title {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: normal;
+    }
+
+    &.Border-t {
+      border-top: 1px solid $greyBorder;
+    }
+  }
+  .mainTitle {
+    text-align: left;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .boltIcon {
+      margin-right: 12px;
+    }
+    .pkart {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: normal;
+    }
+
+    .toggleBtn {
+      position: absolute;
+      right: 0;
+      top: 20px;
+      height: 40px;
+      width: 15px;
+      padding: 0;
+      border: 0;
+      background-color: $bgAliceBlue;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      transition: all 0.5s;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+
+    .sectionWrapper {
+      padding: 0 20px;
+      border-top: 1px solid $greyBorder;
+
+      .itemTitle {
+        text-transform: uppercase;
+        font-size: 12px;
+        color: $txtGrey;
+        font-weight: 500;
+        padding-top: 20px;
+      }
+    }
+
+    li {
+      .item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        text-decoration: none;
+
+        .menuName {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          color: $txtGrey;
+
+          .elementName {
+            margin-left: 10px;
+          }
+
+          &.isSelected {
+            color: $activeRed !important;
+          }
+        }
+
+        .badge {
+          padding: 2px 4px;
+          background-color: $bgRed;
+          color: $activeRed;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .btnWrapper {
+    display: flex;
+    justify-content: space-around;
+    background-color: $bgAliceBlue;
+    margin: 0 15px;
+    padding: 4px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 15px;
+    .btnTheme {
+      border-radius: 8px;
+      padding: 10px 25px;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      &.active {
+        background-color: $offWhite;
+      }
+    }
+  }
+  &.dark {
+    background-color: $black;
+    .cat-title {
+      color: $white;
+    }
+    .mainTitle {
+      .pkart {
+        color: $white;
+      }
+      small {
+        color: $txtGrey;
+      }
+    }
+    ul {
+      li {
+        .item {
+          .menuName {
+            color: $white;
+          }
+        }
+      }
+    }
+    .btnWrapper {
+      background-color: $bgCardDark;
+      .btnTheme {
+        color: $white;
+        &.active {
+          background-color: $txtGrey;
+        }
+      }
+    }
+  }
+  &.hidden {
+    margin-left: -250px;
+    .toggleBtn {
+      right: -15px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}
