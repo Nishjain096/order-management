@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/order-management/static/css/main.2ec3889a.css",
+    "main.js": "/order-management/static/js/main.5047daae.js",
+    "index.html": "/order-management/index.html",
+    "main.2ec3889a.css.map": "/order-management/static/css/main.2ec3889a.css.map",
+    "main.5047daae.js.map": "/order-management/static/js/main.5047daae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ec3889a.css",
+    "static/js/main.5047daae.js"
+  ]
+}
