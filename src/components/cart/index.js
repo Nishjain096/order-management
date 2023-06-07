@@ -69,7 +69,7 @@ const Cart = (props) => {
 
     const link = document.createElement("a");
     link.href = data;
-    link.download = name;
+    link.target="_blank";
 
     // this is necessary as link.click() does not work on the latest firefox
     link.dispatchEvent(
