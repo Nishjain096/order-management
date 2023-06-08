@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
 // Create a  Component for printing
 const PrintBill = (props) => {
   const { details, getSubTotal, taxAmount } = props;
-  console.log("sub total", getSubTotal);
   return (
     <Document>
       <Page size="A4">
